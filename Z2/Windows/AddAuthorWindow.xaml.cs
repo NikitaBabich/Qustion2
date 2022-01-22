@@ -15,13 +15,22 @@ using System.Windows.Shapes;
 namespace Z2.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для AddAuthorWindow.xaml
     /// </summary>
-    public partial class LoginPage : Window
+    public partial class AddAuthorWindow : Window
     {
-        public LoginPage()
+        libraryEntities context;
+        public AddAuthorWindow(libraryEntities context, Author author)
         {
             InitializeComponent();
+            this.context = context;
+            this.DataContext = author;
+        }
+
+        private void BtnSaveData_Click(object sender, RoutedEventArgs e)
+        {
+            context.SaveChanges();
+            this.Close();
         }
     }
 }

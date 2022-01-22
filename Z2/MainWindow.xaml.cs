@@ -24,8 +24,8 @@ namespace Z2
         public MainWindow()
         {
             InitializeComponent();
-            var Login = new Windows.LoginPage();
-            Login.ShowDialog();
+            //var Login = new Windows.LoginPage();
+            //Login.ShowDialog();
             context = new libraryEntities();
             ShowTable();
         }
@@ -53,17 +53,36 @@ namespace Z2
         }
         private void BtnAddData_Click(object sender, RoutedEventArgs e)
         {
-
+            var NewZap = new Instance_Release();
+            context.Instance_Release.Add(NewZap);
+            var NewWind = new Windows.AddInstWindows(context, NewZap);
+            NewWind.ShowDialog();
+            ShowTable();
         }
 
         private void BtnDeleteData_Click(object sender, RoutedEventArgs e)
         {
-
+            var currentZap = DataGridInstRelease.SelectedItem as Instance_Release;
+            if (currentZap == null)
+            {
+                MessageBox.Show("Выберите строку!");
+                return;
+            }
+            MessageBoxResult messageBoxResult = MessageBox.Show("Вы хотите удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                context.Instance_Release.Remove(currentZap);
+                context.SaveChanges();
+                ShowTable();
+            }
         }
 
         private void BtnEditData_Click(object sender, RoutedEventArgs e)
         {
-
+            Button BtnEdit = sender as Button;
+            var currentZap = BtnEdit.DataContext as Instance_Release;
+            var EditWindow = new Windows.AddInstWindows(context, currentZap);
+            EditWindow.ShowDialog();
         }
     }
 }

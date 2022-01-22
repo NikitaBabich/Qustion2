@@ -1,0 +1,26 @@
+﻿<Window x:Class="Z2.Windows.AddInstWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Z2.Windows"
+        mc:Ignorable="d"
+        Title="AddInstWindows" WindowStartupLocation="CenterScreen" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="2">
+            <TextBlock>Читатель</TextBlock>
+            <ComboBox x:Name="CmbReaders" DisplayMemberPath="Surname" SelectedItem="Readers"></ComboBox>
+            <TextBlock>Книга</TextBlock>
+            <ComboBox x:Name="CmbBooks" DisplayMemberPath="Name" SelectedItem="Book"></ComboBox>
+            <TextBlock>Дата выдачи</TextBlock>
+            <DatePicker SelectedDate="{Binding Date_Of_Issue}"></DatePicker>
+            <TextBlock>Дата возврата</TextBlock>
+            <DatePicker SelectedDate="{Binding Return_Date}"></DatePicker>
+        </UniformGrid>
+        <Button x:Name="BtnSaveData" Grid.Row="1" Click="BtnSaveData_Click">Добавить</Button>
+    </Grid>
+</Window>

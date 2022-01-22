@@ -19,9 +19,32 @@ namespace Z2.Windows
     /// </summary>
     public partial class AuthorsWindow : Window
     {
+        libraryEntities context;
         public AuthorsWindow()
         {
             InitializeComponent();
+            context = new libraryEntities();
+            ShowTable();
+        }
+
+        private void ShowTable()
+        {
+            DataGridAuthors.ItemsSource = context.Authors.ToList();
+        }
+
+        private void BtnAddData_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDeleteData_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEditData_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
