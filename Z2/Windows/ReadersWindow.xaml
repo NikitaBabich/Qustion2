@@ -19,7 +19,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="отчество" Binding="{Binding Middlename}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Middlename}"/>
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Adres}"/>
                 <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
                 <DataGridTextColumn Header="Дата рождения" Binding="{Binding Date_of_birthday}"/>

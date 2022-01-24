@@ -7,6 +7,32 @@
         mc:Ignorable="d"
         Title="BooksWindow" WindowStartupLocation="CenterScreen" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="BtnAddData" Content="Добавить запись" Click="BtnAddData_Click"/>
+            <Button x:Name="BtnDeleteData" Content="Удалить запись" Click="BtnDeleteData_Click"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" x:Name="DataGridAuthors" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author.Surname}"/>
+                <DataGridTextColumn Header="Издательство" Binding="{Binding Publishing_Houses.Name}"/>
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type.Type}"/>
+                <DataGridTextColumn Header="Жанр" Binding="{Binding Genre.Genre}"/>
+                <DataGridTextColumn Header="Обложка" Binding="{Binding Photo}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Кол-во страниц" Binding="{Binding Pages}"/>
+                <DataGridTemplateColumn Header="Редактировать">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEditData" Click="BtnEditData_Click">Изменить</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

@@ -24,6 +24,9 @@ namespace Z2
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Middlename { get; set; }
+        public string Country { get; set; }
+        public string Phone { get; set; }
+        public Nullable<System.DateTime> Date_of_birthday { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Book> Books { get; set; }

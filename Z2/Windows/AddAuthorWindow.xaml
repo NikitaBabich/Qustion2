@@ -18,8 +18,8 @@
             <TextBox x:Name="TxtName" Text="{Binding Name}"></TextBox>
             <TextBlock>Отчество</TextBlock>
             <TextBox x:Name="TxtMiddlename" Text="{Binding Middlename}"></TextBox>
-            <TextBlock>Адрес</TextBlock>
-            <TextBox x:Name="TxtAdres" Text="{Binding Adres}"></TextBox>
+            <TextBlock>Страна</TextBlock>
+            <TextBox x:Name="TxtAdres" Text="{Binding Country}"></TextBox>
             <TextBlock>Номер телефона</TextBlock>
             <TextBox x:Name="TxtPhone" Text="{Binding Phone}"></TextBox>
             <TextBlock>Дата рождения</TextBlock>

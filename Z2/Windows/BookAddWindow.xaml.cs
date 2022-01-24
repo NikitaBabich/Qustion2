@@ -15,31 +15,16 @@ using System.Windows.Shapes;
 namespace Z2.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для BooksWindow.xaml
+    /// Логика взаимодействия для BookAddWindow.xaml
     /// </summary>
-    public partial class BooksWindow : Window
+    public partial class BookAddWindow : Window
     {
-        public BooksWindow()
+        public BookAddWindow()
         {
             InitializeComponent();
         }
 
         private void BtnSaveData_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnAddData_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnDeleteData_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnEditData_Click(object sender, RoutedEventArgs e)
         {
 
         }

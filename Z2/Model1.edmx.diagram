@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3a747975897a4d338e1efc11614e7f4c" Name="Diagram1">
-        <EntityTypeShape EntityType="libraryModel.Author" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+      <Diagram DiagramId="35bfad72d38149e199fff9d25d715cae" Name="Diagram1">
+        <EntityTypeShape EntityType="libraryModel.Author" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="libraryModel.Book_Type" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="libraryModel.Book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="libraryModel.Genre" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />

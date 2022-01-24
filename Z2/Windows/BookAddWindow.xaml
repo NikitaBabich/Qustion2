@@ -1,0 +1,34 @@
+﻿<Window x:Class="Z2.Windows.BookAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Z2.Windows"
+        mc:Ignorable="d"
+        Title="BookAddWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="2">
+            <TextBlock>Название</TextBlock>
+            <TextBox x:Name="TxtName" Text="{Binding Name}"></TextBox>
+            <TextBlock>Автор</TextBlock>
+            <ComboBox x:Name="CmbAuthor" DisplayMemberPath="Surname" SelectedItem="{Binding Author}"></ComboBox>
+            <TextBlock>Издательство</TextBlock>
+            <ComboBox x:Name="CmbPublishingHouse" DisplayMemberPath="Name" SelectedItem="{Binding Publishing_House}"></ComboBox>
+            <TextBlock>Тип</TextBlock>
+            <ComboBox x:Name="CmbType" DisplayMemberPath="Book_type" SelectedItem="{Binding Book_Type}"></ComboBox>
+            <TextBlock>Жанр</TextBlock>
+            <ComboBox x:Name="CmbGenre" DisplayMemberPath="Genre" SelectedItem="{Binding Genre}"></ComboBox>
+            <TextBlock>Обложка</TextBlock>
+            <TextBox x:Name="TxtMiddlename" Text="{Binding Middlename}"></TextBox>
+            <TextBlock>Цена</TextBlock>
+            <TextBox x:Name="TxtPrice" Text="{Binding Price}"></TextBox>
+            <TextBlock>Кол-во страниц</TextBlock>
+            <TextBox x:Name="TxtPages" Text="{Binding Pages}"></TextBox>
+        </UniformGrid>
+        <Button x:Name="BtnSaveData" Grid.Row="1" Click="BtnSaveData_Click">Добавить</Button>
+    </Grid>
+</Window>
