@@ -34,17 +34,36 @@ namespace Z2.Windows
 
         private void BtnAddData_Click(object sender, RoutedEventArgs e)
         {
-
+            var NewAuthor = new Author();
+            context.Authors.Add(NewAuthor);
+            var NewWind = new Windows.AddAuthorWindow(context, NewAuthor);
+            NewWind.ShowDialog();
+            ShowTable();
         }
 
         private void BtnDeleteData_Click(object sender, RoutedEventArgs e)
         {
-
+            var currentAuthor = DataGridAuthors.SelectedItem as Author;
+            if (currentAuthor == null)
+            {
+                MessageBox.Show("Выберите строку!");
+                return;
+            }
+            MessageBoxResult messageBoxResult = MessageBox.Show("Вы хотите удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                context.Authors.Remove(currentAuthor);
+                context.SaveChanges();
+                ShowTable();
+            }
         }
 
         private void BtnEditData_Click(object sender, RoutedEventArgs e)
         {
-
+            Button BtnEdit = sender as Button;
+            var currentAuthor = BtnEdit.DataContext as Author;
+            var EditWindow = new Windows.AddAuthorWindow(context, currentAuthor);
+            EditWindow.ShowDialog();
         }
     }
 }
