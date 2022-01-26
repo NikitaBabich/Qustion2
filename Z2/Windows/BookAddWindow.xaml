@@ -23,7 +23,7 @@
             <TextBlock>Жанр</TextBlock>
             <ComboBox x:Name="CmbGenre" DisplayMemberPath="Genre1" SelectedItem="{Binding Genre}"></ComboBox>
             <TextBlock>Обложка</TextBlock>
-            <Image Source="{Binding Photo}" Name="Photo"></Image>
+            <Image Source="{Binding Photo}" Name="Img"></Image>
             <TextBlock>Цена</TextBlock>
             <TextBox x:Name="TxtPrice" Text="{Binding Price}"></TextBox>
             <TextBlock>Кол-во страниц</TextBlock>

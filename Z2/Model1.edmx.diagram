@@ -13,7 +13,12 @@
         <EntityTypeShape EntityType="libraryModel.Publishing_Houses" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="libraryModel.Reader" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="libraryModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="libraryModel.FK_Books_Authors" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryModel.FK_Books_Authors" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2.25" PointY="2.9035953776041663" />
+          <ConnectorPoint PointX="2.7291666666666665" PointY="2.9035953776041659" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="2.9035953776041663" />
+          <ConnectorPoint PointX="3" PointY="2.9035953776041663" />
+        </AssociationConnector>
         <AssociationConnector Association="libraryModel.FK_Books_Book_Type" ManuallyRouted="false" />
         <AssociationConnector Association="libraryModel.FK_Books_Genre" ManuallyRouted="false" />
         <AssociationConnector Association="libraryModel.FK_Books_Publishing_Houses" ManuallyRouted="false" />

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище libraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище libraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Authors">
           <Key>
             <PropertyRef Name="ID_Author" />
@@ -34,7 +34,7 @@
           <Property Name="Id_Publishing_House" Type="int" />
           <Property Name="Id_Type" Type="int" />
           <Property Name="Id_Genre" Type="int" />
-          <Property Name="Photo" Type="varbinary" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Pages" Type="int" />
         </EntityType>
@@ -192,8 +192,7 @@
             <End Role="Instance_Release" EntitySet="Instance_Release" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="libraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -228,7 +227,7 @@
           <Property Name="Id_Publishing_House" Type="Int32" />
           <Property Name="Id_Type" Type="Int32" />
           <Property Name="Id_Genre" Type="Int32" />
-          <Property Name="Photo" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Pages" Type="Int32" />
           <NavigationProperty Name="Author" Relationship="Self.FK_Books_Authors" FromRole="Books" ToRole="Authors" />

@@ -21,22 +21,22 @@ namespace Z2.Windows
     /// </summary>
     public partial class BookAddWindow : Window
     {
-        libraryEntities context;
+        libraryEntities context1;
         public BookAddWindow(libraryEntities context, Book book)
         {
             InitializeComponent();
-            this.context = context;
-            CmbAuthor.ItemsSource = context.Authors.ToList();
-            CmbGenre.ItemsSource = context.Genres.ToList();
-            CmbPublishingHouse.ItemsSource = context.Publishing_Houses.ToList();
-            CmbType.ItemsSource = context.Book_Type.ToList();
+            this.context1 = context;
+            CmbAuthor.ItemsSource = context1.Authors.ToList();
+            CmbGenre.ItemsSource = context1.Genres.ToList();
+            CmbPublishingHouse.ItemsSource = context1.Publishing_Houses.ToList();
+            CmbType.ItemsSource = context1.Book_Type.ToList();
             this.DataContext = book;
         }
 
         private void BtnSaveData_Click(object sender, RoutedEventArgs e)
         {
             SaveImage();
-            context.SaveChanges();
+            context1.SaveChanges();
             this.Close();
         }
         private void SaveImage()
@@ -50,7 +50,7 @@ namespace Z2.Windows
                 byte[] image = File.ReadAllBytes(namefile);
                 var book = (Book)this.DataContext;
                 book.Photo = image;
-                Photo.Source = new BitmapImage(new Uri(namefile));
+                Img.Source = new BitmapImage(new Uri(namefile));
             }
         }
     }

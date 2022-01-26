@@ -22,9 +22,15 @@
                 <DataGridTextColumn Header="Издательство" Binding="{Binding Publishing_Houses.Name}"/>
                 <DataGridTextColumn Header="Тип" Binding="{Binding Book_Type.Book_type1}"/>
                 <DataGridTextColumn Header="Жанр" Binding="{Binding Genre.Genre1}"/>
-                <DataGridTextColumn Header="Обложка" Binding="{Binding Photo}"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
-                <DataGridTextColumn Header="Кол-во страниц" Binding="{Binding Pages}"/>
+                <DataGridTemplateColumn Header="Обложка">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Photo}" Height="70"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Header="Кол-во страниц" Binding="{Binding Pages}"/>
                 <DataGridTemplateColumn Header="Редактировать">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
