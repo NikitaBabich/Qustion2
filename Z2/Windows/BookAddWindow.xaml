@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Z2.Windows"
         mc:Ignorable="d"
-        Title="BookAddWindow" Height="450" Width="800">
+        Title="BookAddWindow" WindowStartupLocation="CenterScreen" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -17,13 +17,13 @@
             <TextBlock>Автор</TextBlock>
             <ComboBox x:Name="CmbAuthor" DisplayMemberPath="Surname" SelectedItem="{Binding Author}"></ComboBox>
             <TextBlock>Издательство</TextBlock>
-            <ComboBox x:Name="CmbPublishingHouse" DisplayMemberPath="Name" SelectedItem="{Binding Publishing_House}"></ComboBox>
+            <ComboBox x:Name="CmbPublishingHouse" DisplayMemberPath="Name" SelectedItem="{Binding Publishing_Houses}"></ComboBox>
             <TextBlock>Тип</TextBlock>
-            <ComboBox x:Name="CmbType" DisplayMemberPath="Book_type" SelectedItem="{Binding Book_Type}"></ComboBox>
+            <ComboBox x:Name="CmbType" DisplayMemberPath="Book_type1" SelectedItem="{Binding Book_Type}"></ComboBox>
             <TextBlock>Жанр</TextBlock>
-            <ComboBox x:Name="CmbGenre" DisplayMemberPath="Genre" SelectedItem="{Binding Genre}"></ComboBox>
+            <ComboBox x:Name="CmbGenre" DisplayMemberPath="Genre1" SelectedItem="{Binding Genre}"></ComboBox>
             <TextBlock>Обложка</TextBlock>
-            <TextBox x:Name="TxtMiddlename" Text="{Binding Middlename}"></TextBox>
+            <Image Source="{Binding Photo}" Name="Photo"></Image>
             <TextBlock>Цена</TextBlock>
             <TextBox x:Name="TxtPrice" Text="{Binding Price}"></TextBox>
             <TextBlock>Кол-во страниц</TextBlock>

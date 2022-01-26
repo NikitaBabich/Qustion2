@@ -19,29 +19,51 @@ namespace Z2.Windows
     /// </summary>
     public partial class BooksWindow : Window
     {
+        libraryEntities context;
         public BooksWindow()
         {
             InitializeComponent();
+            context = new libraryEntities();
+            ShowTable();
         }
 
-        private void BtnSaveData_Click(object sender, RoutedEventArgs e)
+        private void ShowTable()
         {
-
+            DataGridBooks.ItemsSource = context.Books.ToList();
         }
 
         private void BtnAddData_Click(object sender, RoutedEventArgs e)
         {
-
+            var NewBook = new Book();
+            context.Books.Add(NewBook);
+            var NewWind = new BookAddWindow(context, NewBook);
+            NewWind.ShowDialog();
+            ShowTable();
         }
 
         private void BtnDeleteData_Click(object sender, RoutedEventArgs e)
         {
-
+            var currentBook = DataGridBooks.SelectedItem as Book;
+            if (currentBook == null)
+            {
+                MessageBox.Show("Выберите строку!");
+                return;
+            }
+            MessageBoxResult messageBoxResult = MessageBox.Show("Вы хотите удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                context.Books.Remove(currentBook);
+                context.SaveChanges();
+                ShowTable();
+            }
         }
 
         private void BtnEditData_Click(object sender, RoutedEventArgs e)
         {
-
+            Button BtnEdit = sender as Button;
+            var currentBook = BtnEdit.DataContext as Book;
+            var EditWindow = new Windows.BookAddWindow(context, currentBook);
+            EditWindow.ShowDialog();
         }
     }
 }
