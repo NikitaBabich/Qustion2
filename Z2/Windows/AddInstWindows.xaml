@@ -13,9 +13,9 @@
         </Grid.RowDefinitions>
         <UniformGrid Columns="2">
             <TextBlock>Читатель</TextBlock>
-            <ComboBox x:Name="CmbReaders" DisplayMemberPath="Surname" SelectedItem="Readers"></ComboBox>
+            <ComboBox x:Name="CmbReaders" DisplayMemberPath="Surname" SelectedItem="{Binding Reader}"></ComboBox>
             <TextBlock>Книга</TextBlock>
-            <ComboBox x:Name="CmbBooks" DisplayMemberPath="Name" SelectedItem="Book"></ComboBox>
+            <ComboBox x:Name="CmbBooks" DisplayMemberPath="Name" SelectedItem="{Binding Book}"></ComboBox>
             <TextBlock>Дата выдачи</TextBlock>
             <DatePicker SelectedDate="{Binding Date_Of_Issue}"></DatePicker>
             <TextBlock>Дата возврата</TextBlock>

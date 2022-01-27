@@ -54,6 +54,7 @@ namespace Z2.Windows
             {
                 context.Books.Remove(currentBook);
                 context.SaveChanges();
+                MessageBox.Show("Данные удалены");
                 ShowTable();
             }
         }

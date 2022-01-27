@@ -18,10 +18,10 @@
         </StackPanel>
         <DataGrid Grid.Row="1" x:Name="DataGridInstRelease" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Читатель" Binding="{Binding Readers.Surname}"/>
-                <DataGridTextColumn Header="Книга" Binding="{Binding Books.Name}"/>
-                <DataGridTextColumn Header="Дата выдачи" Binding="{Binding Date_Of_Issue}"/>
-                <DataGridTextColumn Header="Дата возврата" Binding="{Binding Return_Date}"/>
+                <DataGridTextColumn Header="Читатель" Binding="{Binding Reader.Surname}"/>
+                <DataGridTextColumn Header="Книга" Binding="{Binding Book.Name}"/>
+                <DataGridTextColumn Header="Дата выдачи" Binding="{Binding Date_Of_Issue, StringFormat={}{0:dd:MMMM.yyyy}}"/>
+                <DataGridTextColumn Header="Дата возврата" Binding="{Binding Return_Date, StringFormat={}{0:dd:MMMM.yyyy}}"/>
                 <DataGridTemplateColumn Header="Редактировать">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

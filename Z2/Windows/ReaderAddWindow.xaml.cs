@@ -30,6 +30,7 @@ namespace Z2.Windows
         private void BtnSaveData_Click(object sender, RoutedEventArgs e)
         {
             context.SaveChanges();
+            MessageBox.Show("Данные добавлены");
             this.Close();
         }
     }

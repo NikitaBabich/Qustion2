@@ -54,6 +54,7 @@ namespace Z2.Windows
             {
                 context.Readers.Remove(currentReader);
                 context.SaveChanges();
+                MessageBox.Show("Данные удалены");
                 ShowTable();
             }
         }

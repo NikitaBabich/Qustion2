@@ -37,6 +37,7 @@ namespace Z2.Windows
         {
             SaveImage();
             context1.SaveChanges();
+            MessageBox.Show("Данные добавлены");
             this.Close();
         }
         private void SaveImage()

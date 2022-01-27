@@ -73,6 +73,7 @@ namespace Z2
             {
                 context.Instance_Release.Remove(currentZap);
                 context.SaveChanges();
+                MessageBox.Show("Данные удалены");
                 ShowTable();
             }
         }

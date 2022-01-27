@@ -22,7 +22,7 @@
                 <DataGridTextColumn Header="Отчество" Binding="{Binding Middlename}"/>
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Adres}"/>
                 <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
-                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Date_of_birthday}"/>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Date_of_birthday, StringFormat={}{0:dd:MMMM.yyyy}}"/>
                 <DataGridTemplateColumn Header="Редактировать">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

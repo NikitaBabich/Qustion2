@@ -54,6 +54,7 @@ namespace Z2.Windows
             {
                 context.Authors.Remove(currentAuthor);
                 context.SaveChanges();
+                MessageBox.Show("Данные удалены");
                 ShowTable();
             }
         }
