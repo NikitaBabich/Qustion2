@@ -66,5 +66,10 @@ namespace Z2.Windows
             var EditWindow = new Windows.AddAuthorWindow(context, currentAuthor);
             EditWindow.ShowDialog();
         }
+
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DataGridAuthors.ItemsSource = context.Authors.Where(x => x.Surname.Contains(TxtSearch.Text)).ToList();
+        }
     }
 }

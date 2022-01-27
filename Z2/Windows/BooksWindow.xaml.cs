@@ -66,5 +66,10 @@ namespace Z2.Windows
             var EditWindow = new Windows.BookAddWindow(context, currentBook);
             EditWindow.ShowDialog();
         }
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DataGridBooks.ItemsSource = context.Books.Where(x => x.Name.Contains(TxtSearch.Text)).Select(x => x.Name).ToList();
+            DataGridBooks.ItemsSource = context.Books.Where(x => x.Name.Contains(TxtSearch.Text)).ToList();
+        }
     }
 }
